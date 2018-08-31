@@ -95,7 +95,10 @@ Route::group(['middleware' => 'jwt.auth'], function ($router) {
      //PayPeriod routes
     Route::post('add/payperiod', 'PayPeriodController@add');
     Route::get('payperiod', 'PayPeriodController@show');
+    Route::get('saved-payperiod', 'PayPeriodController@showSaved');
     Route::post('edit/payperiod', 'PayPeriodController@edit');
+    Route::post('get/payperiod', 'PayPeriodController@get');
+    Route::post('save/payperiod', 'PayPeriodController@save');
 
      //Asset Category routes
     Route::post('add/assetcategory', 'AssetCategoryController@add');
@@ -237,7 +240,7 @@ Route::group(['middleware' => 'jwt.auth'], function ($router) {
     Route::get('vendorpricing', 'VendorServiceController@show');
 
 
-     //Projects 
+     //Projects William
     Route::post('add/project', 'ProjectController@add');
     Route::get('project', 'ProjectController@show');
     Route::get('get-project-costing', 'ProjectController@showCosting');
@@ -271,7 +274,7 @@ Route::group(['middleware' => 'jwt.auth'], function ($router) {
     Route::post('requisition-material/assign-vendor', 'PurchaseRequisitionMaterialController@assign_vendor');
 
 
-    //Individaul Project Phases 
+    //Individaul Project Phases -- William
     Route::post('add/invividualprojectphase', 'IndividualProjectPhasesController@add');
     Route::post('delete/invividualprojectphase', 'IndividualProjectPhasesController@delete');
     Route::post('get/invividualprojectphase', 'IndividualProjectPhasesController@get');
@@ -279,9 +282,9 @@ Route::group(['middleware' => 'jwt.auth'], function ($router) {
     Route::post('approve/invividualprojectphase', 'IndividualProjectPhasesController@approve');
     Route::post('decline/invividualprojectphase', 'IndividualProjectPhasesController@decline');
     Route::post('cancel/invividualprojectphase', 'IndividualProjectPhasesController@cancel');
-    Route::post('singleGet/invividualprojectphase', 'IndividualProjectPhasesController@singleGet');
+    Route::post('singleGet/invividualprojectphase', 'IndividualProjectPhasesController@singleGet'); //William
 
-    Route::post('get/project/invividualprojectphases', 'IndividualProjectPhasesController@getProjectPhases');
+    Route::post('get/project/invividualprojectphases', 'IndividualProjectPhasesController@getProjectPhases'); //William
 
     //Project Files
     Route::post('project/file-upload','ProjectFileController@add');
@@ -305,7 +308,7 @@ Route::group(['middleware' => 'jwt.auth'], function ($router) {
     Route::post('edit/assignliquidasset', 'LiquidAssetassignmentController@edit');
     // Route::post('edit/liquidasset/active', 'LiquidAssetController@editactive');
 
-     //Project Materials
+     //Project Materials -- William
     Route::post('update/projectmaterial', 'ProjectMaterialController@update');//Used for updating existing records
     Route::post('add/projectmaterial', 'ProjectMaterialController@add');//Used for inserting new ones
     Route::post('delete/projectmaterial', 'ProjectMaterialController@delete');//Used for inserting new ones
@@ -319,6 +322,8 @@ Route::group(['middleware' => 'jwt.auth'], function ($router) {
     Route::post('add/projectlabour', 'ProjectLabourController@add');//Used for inserting new ones
     Route::post('delete/projectlabour', 'ProjectLabourController@delete');
 
+
+       //William
     Route::post('add/operational-projectlabour', 'ProjectLabourController@addForOperationalProjects');//Used for inserting new ones
     Route::post('delete/operational-projectlabour', 'ProjectLabourController@deleteForOperationalProjects');//Used for deleting new ones
     Route::post('update/operational-projectlabour', 'ProjectLabourController@updateForOperationalProjects');//Used for updating existing records
@@ -359,8 +364,6 @@ Route::group(['middleware' => 'jwt.auth'], function ($router) {
 
      //Bank Accounts
      Route::get('bankaccounts', 'BankAccountController@getAll');
-     Route::get('bank-accounts', 'BankAccountController@show');
-     Route::post('add/bank-account', 'BankAccountController@add');
 
      //Inventory Store Routes
      Route::post('add/inventorystore', 'InventoryController@add');
@@ -404,13 +407,14 @@ Route::group(['middleware' => 'jwt.auth'], function ($router) {
      Route::get('vendor-contracts', 'VendorContractController@show');
      Route::post('edit/tax', 'VendorContractController@edit');
 
-    //user earnings route
-    Route::post('edit/user/earnings', 'EarningController@update');
+     //user earnings route
+     Route::post('edit/user/earnings', 'EarningController@update');
 
-    //user deductions route
-    Route::post('edit/user/deductions', 'DeductionController@update');
+     //user deductions route
+     Route::post('edit/user/deductions', 'DeductionController@update');
 
-    //Payroll Archive Routes
-    Route::post('add/payment', 'ArchiveController@add');
+
+      //Payroll Archive Routes
+     Route::post('add/payment', 'ArchiveController@add');
    
 });
