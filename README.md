@@ -1,2 +1,2 @@
-# VueJs
-Some interesting things i do with vue.js and remember to post online :)
+# Loan Ammortization
+Simple loan ammortization program
